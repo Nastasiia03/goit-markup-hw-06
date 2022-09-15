@@ -248,7 +248,9 @@ padding: 8px 28px;
     width: 528px;
     height: 581px;
     background-color: var(--main-bg-cl);
-   
+   padding: 40px;
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
 }
 
 .modal-btn {
@@ -266,7 +268,49 @@ padding: 8px 28px;
     background-color: var(--main-bg-cl);
 }
 
+/* Register form */
 
+.register-form-title {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    line-height: calc(23/20);
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+}
+
+.register-form-group {
+    margin-bottom: 20px;
+}
+
+.register-form-field {
+display: block;
+margin-bottom: 10px;
+}
+
+.register-form-label {
+    font-size: 12px;
+    line-height: calc(14/12);
+    letter-spacing: 0.01em;
+    color: var(--supporting-txt-cl);
+    display: block;
+}
+
+.register-form-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+padding-left: 42px;
+padding-right: 42px;
+}
+
+.register-form-agreement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 /* Features */
 
 .features {
