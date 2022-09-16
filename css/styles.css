@@ -285,7 +285,11 @@ border-radius: 4px;
 
 .register-form-field {
 display: block;
+position: relative;
+height: 58px;
 margin-bottom: 10px;
+
+
 }
 
 .register-form-label {
@@ -294,6 +298,8 @@ margin-bottom: 10px;
     letter-spacing: 0.01em;
     color: var(--supporting-txt-cl);
     display: block;
+    text-align: left;
+    margin-bottom: 4px;
 }
 
 .register-form-input {
@@ -303,6 +309,22 @@ margin-bottom: 10px;
 border-radius: 4px;
 padding-left: 42px;
 padding-right: 42px;
+transition: outline-color var(--anim-fast);
+}
+
+.register-form-input:focus {
+    outline-color: var(--accent-bg-cl);
+}
+
+.register-form-icon {
+position: absolute;
+left: 12px;
+top: 50%;
+transition: fill var(--anim-fast);
+}
+
+.register-form-input:focus + .register-form-icon {
+    fill: var(--accent-bg-cl);
 }
 
 .register-form-agreement {
