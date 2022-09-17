@@ -59,6 +59,19 @@ h1,h2,h3,h4,h5,h6,p {
     margin-right: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
 /* Header */
 
 .header {
@@ -206,7 +219,7 @@ color: var(--light-txt-cl);
 margin-bottom: 30px;
 }
 
-.hero .btn {
+.btn {
 font-family: inherit;
 font-weight: 700;
 font-size: 16px;
@@ -268,6 +281,15 @@ border-radius: 4px;
     background-color: var(--main-bg-cl);
 }
 
+.modal-icon {
+    transition: fill var(--anim-fast);
+}
+
+.modal-btn:hover .modal-icon, 
+.modal-btn:focus .modal-icon{
+fill: var(--accent-bg-cl);
+}
+
 /* Register form */
 
 .register-form-title {
@@ -288,11 +310,10 @@ display: block;
 position: relative;
 height: 58px;
 margin-bottom: 10px;
-
-
 }
 
-.register-form-label {
+.register-form-label,
+.register-form-heading {
     font-size: 12px;
     line-height: calc(14/12);
     letter-spacing: 0.01em;
@@ -309,11 +330,17 @@ margin-bottom: 10px;
 border-radius: 4px;
 padding-left: 42px;
 padding-right: 42px;
+outline-color: transparent;
 transition: outline-color var(--anim-fast);
 }
 
 .register-form-input:focus {
     outline-color: var(--accent-bg-cl);
+}
+
+.register-form-input:hover,
+.register-form-input:focus {
+    cursor: pointer;
 }
 
 .register-form-icon {
@@ -327,12 +354,70 @@ transition: fill var(--anim-fast);
     fill: var(--accent-bg-cl);
 }
 
+.register-form-comment {
+    display: block;
+    height: 138px;
+    margin-bottom: 20px;
+}
+.register-form-message {
+display: block;
+ resize: none;
+ outline: transparent;
+ border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+width: 100%;  
+height: 120px;
+padding: 12px 16px;
+font-size: 12px;
+}
+
+.register-form-message::placeholder {
+font-size: 12px;
+line-height: calc(14/12);
+letter-spacing: 0.01em;
+color: rgba(117, 117, 117, 0.5);
+}
+
 .register-form-agreement {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    gap: 7px;
 }
+
+.icon-checked {
+    opacity: 0;
+    transition: opacity var(--anim-fast);
+}
+
+.register-form-checkbox:checked + .register-form-icons .icon-checked {
+opacity: 1;
+}
+
+.icon-unchecked {
+    opacity: 1;
+    transition: opacity var(--anim-fast);
+}
+
+.register-form-checkbox:checked + .register-form-icons .icon-unchecked {
+opacity: 0;
+}
+
+.register-form-desc {
+    letter-spacing: 0.03em;
+    color: var(--supporting-txt-cl);
+    user-select: none;
+}
+
+.register-form-link {
+    color: var(--accent-txt-cl);
+}
+
+.register-form-btn {
+    width: 200px;
+}
+
 /* Features */
 
 .features {
@@ -605,6 +690,10 @@ transition: color var(--anim-fast);
 color: var(--accent-txt-cl);    
 }
 
+.socials {
+margin-right: 93px;
+}
+
 .socials-subtitle {
     color: var(--light-txt-cl);
     margin-bottom: 20px;
@@ -617,6 +706,55 @@ color: var(--accent-txt-cl);
 
 .footer-icon {
     fill: var(--light-txt-cl);
+}
+
+.subscription-form-title {
+    display: block;
+    color: var(--light-txt-cl);
+    margin-bottom: 20px;
+}
+
+.subscription-form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.subscription-form-label {
+    display: block;
+    width: 358px;
+}
+.subscription-form-input {
+width: 100%;
+height: 50px;
+background-color: transparent;
+border: 1px solid rgba(255, 255, 255, 0.3);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
+padding: 15px 16px;
+font-size: 16px;
+line-height: calc(20/16);
+letter-spacing: 0.03em;
+color: rgba(255, 255, 255, 0.6);
+}
+
+.subscription-form-input::placeholder {
+font-size: 16px;
+line-height: calc(20/16);
+display: flex;
+align-items: center;
+letter-spacing: 0.03em;
+color: rgba(255, 255, 255, 0.6);
+}
+
+.subscription-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    height: 50px;
 }
 /* Portfolio */
 
@@ -633,6 +771,7 @@ color: var(--accent-txt-cl);
     margin-bottom: 34px;
 }
 .filters-list .btn {
+    width: fit-content;
 font-family: inherit;
 font-weight: 500;
 font-size: 16px;
