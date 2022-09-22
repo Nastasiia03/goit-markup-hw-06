@@ -712,6 +712,7 @@ margin-right: 93px;
     display: block;
     color: var(--light-txt-cl);
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .subscription-form-group {
